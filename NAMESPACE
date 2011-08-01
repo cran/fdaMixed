@@ -1,0 +1,3 @@
+useDynLib(fdaMixed)
+export(fdaLm,findRoots,dataTrans)
+
