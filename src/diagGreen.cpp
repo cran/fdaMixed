@@ -32,7 +32,7 @@
 //
 // Implicit assumptions:
 //   1) left_limit_ < right_limit_
-//   2) Sampling is equidistant as described in Markussen (2010)
+//   2) Sampling is equidistant as described in Markussen (2013)
 //
 // Remarks:
 //   1) If eta_left_real <=0 and eta_right_real >= 0, then the algorithm 
@@ -72,7 +72,7 @@ extern "C" SEXP diagGreen(SEXP left_limit_, SEXP right_limit_,
     arma::vec Green(GreenR.begin(),NN,false);
     arma::vec acf(acfR.begin(),ll,false);
 
-    // define variables from Markussen (2010), Proposition 3
+    // define variables from Markussen (2013), Proposition 3
     double Delta = (right_limit-left_limit)/NN;
     arma::cx_mat Wleft = arma::ones<arma::cx_mat>(2*kk,kk);
     for (int ii=1; ii<2*kk; ii++) {

@@ -23,15 +23,14 @@ LazyLoad: \tab yes\cr
 Bo Markussen <bomar@life.ku.dk>
 }
 \references{
-Bo Markussen, "Functional data analysis in an operator based mixed model
-framework", accepted, Bernoulli, 2011.
+Bo Markussen (2013), "Functional data analysis in an operator based mixed model
+framework", Bernoulli, vol. 19, pp. 1-17.
 
-Conrad Sanderson, "Armadillo: An open source C++ linear algebra library
+Conrad Sanderson (2010), "Armadillo: An open source C++ linear algebra library
 for fast prototyping and computationally intensive experiments", NICTA
-technical report, 2010.
+technical report.
 
-Dirk Eddelbuettel, Ramain Francois, "Rcpp: Seamless R and C++
-integration", submitted article currently under review, 2010.
+Dirk Eddelbuettel, "Rcpp: Seamless R and C++ Integration with Rcpp", UseR!, Springer, 2013.
 }
 \keyword{
   package

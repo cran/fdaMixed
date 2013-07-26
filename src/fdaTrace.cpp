@@ -29,7 +29,7 @@
 //
 // Implicit assumptions:
 // 1) left_limit_ < right_limit_
-// 2) Sampling is equidistant as described in Markussen (2010)
+// 2) Sampling is equidistant as described in Markussen (2013)
 //
 // Remarks:
 // 1) If eta_left_real <=0 and eta_right_real >= 0, then the algorithm is
@@ -86,7 +86,7 @@ extern "C" SEXP fdaTrace(SEXP left_limit_, SEXP right_limit_,
 
     // loop over sets of eigenvalues
     for (int jj=0; jj<JJ; jj++) {
-      // define variables from Markussen (2010), Theorem 2
+      // define variables from Markussen (2013), Theorem 2
       for (int ii=1; ii<2*kk; ii++) {
         Wleft.row(ii) = eta_left.row(jj) % Wleft.row(ii-1);   
       }

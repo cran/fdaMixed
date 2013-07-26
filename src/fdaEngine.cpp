@@ -52,7 +52,7 @@
 //
 // Implicit assumptions:
 //   1) left_limit_ < right_limit_
-//   2) Sampling is equidistant as described in Markussen (2010)
+//   2) Sampling is equidistant as described in Markussen (2013)
 //   3) Dimensions are consistent (this is not checked)
 //   4) Ymat has at least 3 rows, ie. NN >= 3 (this is not checked)
 //
@@ -149,7 +149,7 @@ extern "C" SEXP fdaEngine(SEXP left_limit_, SEXP right_limit_,
     arma::mat Cu(CuP,qq,qq,false);
     arma::vec logLik(logLikR.begin(),5+order,false);
     
-    // define variables from Markussen (2010), Proposition 3
+    // define variables from Markussen (2013), Proposition 3
     double Delta = (right_limit-left_limit)/NN;
     arma::cx_mat Wleft = arma::ones<arma::cx_mat>(2*kk,kk);
     for (int ii=1; ii<2*kk; ii++) {
