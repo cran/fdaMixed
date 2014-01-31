@@ -17,20 +17,20 @@ fdaLm <- function(formula,data,design,
   # Extract observation vector
   mf         <- mf.call[c(1,match(c("formula","data"),names(mf.call),0))]
   mf[[1]]    <- as.name("model.frame")
-  mf$formula <- formula(Formula(formula),lhs=1,rhs=0)
+  mf$formula <- formula(Formula::Formula(formula),lhs=1,rhs=0)
   mf$drop.unused.levels <- TRUE
   Ymat       <- eval(mf,parent.frame())[,1]
   Ntotal     <- length(Ymat)
   
   # Extract sample identifier
-  if (length(Formula(formula))[1]==1) {
+  if (length(Formula::Formula(formula))[1]==1) {
     # Only one sample
     MM <- 1
   } else {
     # Look for sample identifier inside 'data'
     mf         <- mf.call[c(1,match(c("formula","data"),names(mf.call),0))]
     mf[[1]]    <- as.name("model.frame")
-    mf$formula <- formula(Formula(formula),lhs=2,rhs=0)
+    mf$formula <- formula(Formula::Formula(formula),lhs=2,rhs=0)
     mf$drop.unused.levels <- TRUE
     id.data    <- try(as.factor(eval(mf,parent.frame())[,1]),silent=TRUE)
     if (class(id.data)!="try-error") {
@@ -41,7 +41,7 @@ fdaLm <- function(formula,data,design,
     # Look for sample identifier inside 'design'
     mf         <- mf.call[c(1,match(c("formula","design"),names(mf.call),0))]
     mf[[1]]    <- as.name("model.frame")
-    mf$formula <- formula(Formula(formula),lhs=2,rhs=0)
+    mf$formula <- formula(Formula::Formula(formula),lhs=2,rhs=0)
     mf$drop.unused.levels <- TRUE
     names(mf)[match("design",names(mf),0)] <- "data"
     id.design  <- try(as.factor(eval(mf,parent.frame())[,1]),silent=TRUE)
@@ -107,7 +107,7 @@ fdaLm <- function(formula,data,design,
   if (is.element("design",names(mf.call))) {
     mf         <- mf.call[c(1,match(c("formula","design"),names(mf.call),0))]
     mf[[1]]    <- as.name("model.frame")
-    mf$formula <- formula(Formula(formula),lhs=0,rhs=1)
+    mf$formula <- formula(Formula::Formula(formula),lhs=0,rhs=1)
     mf$drop.unused.levels <- TRUE
     names(mf)[match("design",names(mf),0)] <- "data"
     mf         <- try(suppressWarnings(eval(mf,parent.frame())),silent=TRUE)
@@ -124,7 +124,7 @@ fdaLm <- function(formula,data,design,
     # Look for design variables inside 'data'
     mf         <- mf.call[c(1,match(c("formula","data"),names(mf.call),0))]
     mf[[1]]    <- as.name("model.frame")
-    mf$formula <- formula(Formula(formula),lhs=0,rhs=1)
+    mf$formula <- formula(Formula::Formula(formula),lhs=0,rhs=1)
     mf$drop.unused.levels <- TRUE
     mf         <- try(suppressWarnings(eval(mf,parent.frame())),silent=TRUE)
     if (class(mf)=="try-error") stop("All fixed effect design variables not found in 'data' and/or parent environment")
@@ -137,7 +137,7 @@ fdaLm <- function(formula,data,design,
   }
 
   # Make design matrix
-  GammaMat             <- model.matrix(Formula(formula),data=mf,lhs=0,rhs=1)
+  GammaMat             <- model.matrix(Formula::Formula(formula),data=mf,lhs=0,rhs=1)
   beta.names           <- colnames(GammaMat)
   p0                   <- length(beta.names)
   Nfixed               <- dim(GammaMat)[1]
@@ -149,7 +149,7 @@ fdaLm <- function(formula,data,design,
   # ------------------------------------------
   
   # Design matrix for random effects 
-  if (length(Formula(formula))[2]==1) {
+  if (length(Formula::Formula(formula))[2]==1) {
     # No random effects
     q0   <- 0
     Zmat <- matrix(0,MM,q0)
@@ -159,7 +159,7 @@ fdaLm <- function(formula,data,design,
     if (is.element("design",names(mf.call))) {
       mf         <- mf.call[c(1,match(c("formula","design"),names(mf.call),0))]
       mf[[1]]    <- as.name("model.frame")
-      mf$formula <- formula(Formula(formula),lhs=0,rhs=2)
+      mf$formula <- formula(Formula::Formula(formula),lhs=0,rhs=2)
       mf$drop.unused.levels <- TRUE
       names(mf)[match("design",names(mf),0)] <- "data"
       mf         <- try(suppressWarnings(eval(mf,parent.frame())),silent=TRUE)
@@ -176,7 +176,7 @@ fdaLm <- function(formula,data,design,
       # Look for design variables inside 'data'
       mf         <- mf.call[c(1,match(c("formula","data"),names(mf.call),0))]
       mf[[1]]    <- as.name("model.frame")
-      mf$formula <- formula(Formula(formula),lhs=0,rhs=2)
+      mf$formula <- formula(Formula::Formula(formula),lhs=0,rhs=2)
       mf$drop.unused.levels <- TRUE
       mf         <- try(suppressWarnings(eval(mf,parent.frame())),silent=TRUE)
       if (class(mf)=="try-error") stop("All random effect design variables not found in 'data' and/or parent frame")
@@ -189,7 +189,7 @@ fdaLm <- function(formula,data,design,
     }
 
     # Make design matrix
-    Zmat             <- model.matrix(Formula(formula),data=mf,lhs=0,rhs=2)
+    Zmat             <- model.matrix(Formula::Formula(formula),data=mf,lhs=0,rhs=2)
     u.names          <- colnames(Zmat)
     q0               <- length(u.names)    
     Nrandom          <- dim(Zmat)[1]
