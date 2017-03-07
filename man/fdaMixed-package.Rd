@@ -1,7 +1,7 @@
 \name{fdaMixed-package}
 \alias{fdaMixed}
 \docType{package}
-\title{Functional data analysis in a mixed model framework}
+\title{Functional Data Analysis in a Mixed Model Framework}
 \description{Likelihood based analysis of 1-dimension functional data in
   a mixed-effets model framework. The methodology is designed for
   equidistantly sampled high frequency data, where the needed matrix
@@ -13,14 +13,14 @@
 \tabular{ll}{
 Package: \tab fdaMixed\cr
 Type: \tab Package\cr
-Version: \tab 0.1\cr
-Date: \tab 2011-08-01\cr
+Version: \tab 0.5\cr
+Date: \tab 2017-03-07\cr
 License: \tab GPL-2\cr
 LazyLoad: \tab yes\cr
 }
 }
 \author{
-Bo Markussen <bomar@life.ku.dk>
+Bo Markussen <bomar@math.ku.dk>
 }
 \references{
 Bo Markussen (2013), "Functional data analysis in an operator based mixed model

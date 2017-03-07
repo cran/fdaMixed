@@ -371,7 +371,7 @@ fdaLm <- function(formula,data,design,
             geometricMean,
             Yoriginal,
             Ymat,
-            DUP=FALSE,package="fdaMixed")
+            PACKAGE="fdaMixed")
     }
 
     # --------------------
@@ -396,7 +396,7 @@ fdaLm <- function(formula,data,design,
                              Re(roots$left),Im(roots$left),
                              Re(roots$right),Im(roots$right),
                              Fleft,Fright,NN,
-                             DUP=FALSE,PACKAGE="fdaMixed")))
+                             PACKAGE="fdaMixed")))
     }
     
     # --------------------------------------------
@@ -412,7 +412,7 @@ fdaLm <- function(formula,data,design,
             Yres,
             betaHat,uBLUP,uBLUPinvG,
             Cbeta,Cu,
-            DUP=FALSE,package="fdaMixed")
+            PACKAGE="fdaMixed")
     
       # Compute squared length of projected random effects
       if (q0==0) {
@@ -427,7 +427,7 @@ fdaLm <- function(formula,data,design,
               uBLUPinvG,
               proj.uBLUPinvG,dummyVec,dummyVec,xBLUP.uBLUPinvG,condRes.uBLUPinvG,
               dummyMat,dummyMat,logLik.uBLUPinvG,
-              DUP=FALSE,PACKAGE="fdaMixed")
+              PACKAGE="fdaMixed")
 
         # Second quadratic term
         quad.uBLUP <- sum(as.vector(uBLUP)*condRes.uBLUPinvG)
@@ -445,7 +445,7 @@ fdaLm <- function(formula,data,design,
             G,
             Yres,
             projMat,dummyVec,dummyVec,xBLUP,condRes,dummyMat,dummyMat,logLikVec,
-            DUP=FALSE,PACKAGE="fdaMixed")
+            PACKAGE="fdaMixed")
 
       # ---------------------------
       # Estimate noise variance
@@ -489,7 +489,7 @@ fdaLm <- function(formula,data,design,
             G,
             Ymat,
             projMat,betaHat,uBLUP,xBLUP,condRes,Cbeta,Cu,logLikVec,
-            DUP=FALSE,PACKAGE="fdaMixed")
+            PACKAGE="fdaMixed")
 
       # ---------------------------
       # Estimate noise variance
@@ -611,7 +611,7 @@ fdaLm <- function(formula,data,design,
 #          Re(roots$left),Im(roots$left),Re(roots$right),Im(roots$right),
 #          Fleft,Fright,
 #          invAdiag,acfVec,
-#          DUP=FALSE,PACKAGE="fdaMixed")
+#          PACKAGE="fdaMixed")
 #
 #    # Variance of conditional residuals
 #    condResVar <- outer(invAdiag,rep(res$sigma2hat,MM))
@@ -631,7 +631,7 @@ fdaLm <- function(formula,data,design,
 #          Re(roots$left),Im(roots$left),Re(roots$right),Im(roots$right),
 #          Fleft,Fright,
 #          invAdiag,acfVec,
-#          DUP=FALSE,PACKAGE="fdaMixed")
+#          PACKAGE="fdaMixed")
 #
 #    # Make matrix terms
 #    if (q0==0) {
