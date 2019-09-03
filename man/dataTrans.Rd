@@ -21,7 +21,7 @@ dataTrans(y, mu, direction = "backward", geoMean = NULL)
     transformation.}
 }
 \value{The transformed variable.}
-\author{Bo Markussen <bomar@life.ku.dk>}
+\author{Bo Markussen <bomar@math.ku.dk>}
 \note{This function is intended to be used in conjunction with
   \code{\link{fdaLm}} to achieve estimates on the orginal scale. Thus,
   the geometric mean of the original observations should be kept in

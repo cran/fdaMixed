@@ -203,7 +203,7 @@ extern "C" SEXP fdaEngine(SEXP left_limit_, SEXP right_limit_,
       phi.row(ii) = (Wleft.row(ii)-Wright.row(ii)*exp_FW_exp)*phi_fac;
     }
     // update conditional mean
-    proj.row(0) = arma::reshape(arma::real(phi*(sum2+exp_FW*sum4)),1,cols,1);
+    proj.row(0) = arma::reshape(arma::trans(arma::real(phi*(sum2+exp_FW*sum4))),1,cols);
     // forward loop
     for (int nn=1; nn<NN; nn++) {
       // update sums
@@ -224,7 +224,7 @@ extern "C" SEXP fdaEngine(SEXP left_limit_, SEXP right_limit_,
         phi.row(ii) = (Wleft.row(ii)-Wright.row(ii)*exp_FW_exp)*phi_fac;
       }
       // update conditional mean
-      proj.row(nn) = arma::reshape(arma::real(phi*(sum1+sum2+exp_FW*(sum3+sum4))),1,cols,1);
+      proj.row(nn) = arma::reshape(arma::trans(arma::real(phi*(sum1+sum2+exp_FW*(sum3+sum4)))),1,cols);
     }
 
     // initialize backward loop sums
@@ -245,7 +245,7 @@ extern "C" SEXP fdaEngine(SEXP left_limit_, SEXP right_limit_,
       phi.row(ii) = (Wright.row(ii)-Wleft.row(ii)*exp_FW_exp)*phi_fac;
     }
     // update conditional mean
-    proj.row(NN-1) -= arma::reshape(arma::real(phi*(sum1+exp_FW*sum3)),1,cols,1);
+    proj.row(NN-1) -= arma::reshape(arma::trans(arma::real(phi*(sum1+exp_FW*sum3))),1,cols);
     // backward loop
     for (int nn=NN-1; nn>0; nn--) {
       // update sums
@@ -266,7 +266,7 @@ extern "C" SEXP fdaEngine(SEXP left_limit_, SEXP right_limit_,
         phi.row(ii) = (Wright.row(ii)-Wleft.row(ii)*exp_FW_exp)*phi_fac;
       }
       // update conditional mean
-      proj.row(nn-1) -= arma::reshape(arma::real(phi*(sum1+sum2+exp_FW*(sum3+sum4))),1,cols,1);
+      proj.row(nn-1) -= arma::reshape(arma::trans(arma::real(phi*(sum1+sum2+exp_FW*(sum3+sum4)))),1,cols);
     }
 
     // Normalize projection

@@ -32,7 +32,7 @@ findRoots(coefs, k = 1)
   Solved using Section 5.6 in Press et al, "Numerical Recipies in C",
   second edition.
 }
-\author{Bo Markussen <bomar@life.ku.dk>}
+\author{Bo Markussen <bomar@math.ku.dk>}
 \examples{
 findRoots(c(-1,0,1),1)
 findRoots(c(1,-1,1),2)

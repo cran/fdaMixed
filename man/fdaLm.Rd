@@ -154,7 +154,7 @@ left = NULL, right = NULL)
   \item{betaVar}{Variance matrix of fixed effect estimate.}
 %  \item{uVar}{Variance matrix of random effect prediction.}
 }
-\author{Bo Markussen <bomar@life.ku.dk>}
+\author{Bo Markussen <bomar@math.ku.dk>}
 \seealso{See also \code{\link{findRoots}} and \code{\link{dataTrans}}.}
 \examples{
 # ---------------------

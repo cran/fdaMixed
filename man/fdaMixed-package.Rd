@@ -32,10 +32,8 @@ technical report.
 
 Dirk Eddelbuettel, "Rcpp: Seamless R and C++ Integration with Rcpp", UseR!, Springer, 2013.
 }
-\keyword{
-  package
-  models
-}
+\keyword{package}
+\keyword{models}
 \seealso{
   Implementation done using the package \code{RcppArmadillo}.
   For penalized likelihood analysis of functional data see the packages
