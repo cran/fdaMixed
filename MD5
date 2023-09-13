@@ -1,11 +1,11 @@
-b414b8937704fed8921216dc20abf0ff *DESCRIPTION
+c9aa0548cafc4ef394ee1c31ac239b9b *DESCRIPTION
 497589af5c594d913808c308ba8619a6 *NAMESPACE
 71fa4ad0337fa77ac19a5ebaee31cd99 *R/dataTrans.R
-7fcdf6084290a5a91c9045cfdbad49c6 *R/fdaLm.R
+ae1e896047fed0cc0fc851bf9a367fa3 *R/fdaLm.R
 e5b6cdd7b4775ebbede24495685add50 *R/findRoots.R
 4bd7a495332967adf2a69069e77c2ba5 *man/dataTrans.Rd
 4ee854324eb1a08661b81140e0f40516 *man/fdaLm.Rd
-8020e3723c0a72898ddeda8477ae1e8d *man/fdaMixed-package.Rd
+50f0fa03a5b6d3f75ed74f57093c61b3 *man/fdaMixed-package.Rd
 324643af5be6260b5229b509f0cad431 *man/findRoots.Rd
 489b262d4f81136a32f0bb09936fe53e *src/Makevars
 a73031cbe7d6aaf0bd22e20f6526977d *src/Makevars.win
